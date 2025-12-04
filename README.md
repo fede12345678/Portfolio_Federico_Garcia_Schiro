@@ -1,7 +1,7 @@
 [README.md](https://github.com/user-attachments/files/23935639/README.md)
 # Portfolio Project
 
-This is a personal portfolio project for Federico Garcia Schiro, showcasing skills, projects, and contact information.
+This is a personal portfolio project, showcasing skills, projects, and contact information.
 
 ## Project Structure
 
@@ -25,7 +25,7 @@ portfolio-project
 
 The portfolio includes the following sections:
 
-- **Welcome Message**: A brief introduction with a photo and the name "Federico Garcia Schiro."
+- **Welcome Message**: A brief introduction with a photo and the my name
 - **About Me**: A section detailing personal background and experiences.
 - **Projects**: A showcase of various projects completed.
 - **Skills**: A list of technical skills and proficiencies.
