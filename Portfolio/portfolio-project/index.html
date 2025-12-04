@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federico Garcia Schiros Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Estilo específico para el botón de WhatsApp */
+        .whatsapp-button {
+            width: 25px; /* Tamaño del botón */
+            height: 25px; /* Tamaño del botón */
+            border-radius: 50%; /* Mantiene el botón redondo */
+            background-color: white; /* Fondo blanco */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, filter 0.3s ease; /* Transición suave */
+        }
+
+        /* Ícono dentro del botón de WhatsApp */
+        .whatsapp-button img {
+            width: 15px; /* Tamaño del ícono */
+            height: 15px;
+        }
+
+        /* Efecto al pasar el mouse sobre el botón de WhatsApp */
+        .whatsapp-button:hover {
+            transform: scale(1.2); /* Aumenta el tamaño del botón */
+            filter: brightness(1.2); /* Hace el ícono más brillante */
+        }
+
+        /* Contenedor de los botones de contacto */
+        .contact-buttons {
+            display: flex; /* Alinea los botones en fila */
+            justify-content: center; /* Centra los botones horizontalmente */
+            gap: 120px; /* Aumenta aún más el espaciado entre los botones */
+            margin-top: 20px; /* Espaciado superior */
+        }
+
+        /* Botones de contacto (incluido WhatsApp) */
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px; /* Tamaño del botón */
+            height: 50px; /* Tamaño del botón */
+            border-radius: 50%; /* Hace que los botones sean redondos */
+            background-color: #ffffff; /* Fondo blanco */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+            transition: transform 0.3s ease, filter 0.3s ease; /* Transición suave */
+        }
+
+        /* Íconos dentro de los botones */
+        .contact-button img {
+            width: 28px; /* Tamaño del ícono */
+            height: 28px;
+        }
+
+        /* Efecto al pasar el mouse sobre los botones */
+        .contact-button:hover {
+            transform: scale(1.2); /* Aumenta el tamaño del botón */
+            filter: brightness(1.2); /* Hace el ícono más brillante */
+        }
+
+        /* Estilos para la barra de navegación */
+        .navbar {
+            background-color: #333; /* Fondo oscuro */
+            color: white; /* Texto blanco */
+            padding: 10px 0; /* Espaciado superior e inferior */
+            position: sticky; /* Fija la barra en la parte superior al hacer scroll */
+            top: 0; /* Posición en la parte superior */
+            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+        }
+
+        .navbar ul {
+            list-style-type: none; /* Quita los puntos de la lista */
+            padding: 0; /* Quita el padding */
+            margin: 0; /* Quita el margin */
+            display: flex; /* Alinea los elementos en fila */
+            justify-content: center; /* Centra los elementos horizontalmente */
+        }
+
+        .navbar li {
+            margin: 0 15px; /* Espaciado entre los elementos de la lista */
+        }
+
+        .navbar a {
+            color: white; /* Texto blanco para los enlaces */
+            text-decoration: none; /* Quita el subrayado de los enlaces */
+            font-weight: bold; /* Texto en negrita */
+        }
+
+        /* Efecto al pasar el mouse sobre los enlaces de la navbar */
+        .navbar a:hover {
+            text-decoration: underline; /* Subraya el texto al pasar el mouse */
+        }
+
+        /* Estilos para la sección de bienvenida */
+        .welcome {
+            text-align: center; /* Centra el texto */
+            padding: 50px 20px; /* Espaciado superior e inferior, y lateral */
+            background-color: #f4f4f4; /* Fondo gris claro */
+        }
+
+        .profile-photo {
+            width: 150px; /* Tamaño de la foto de perfil */
+            height: 150px; /* Tamaño de la foto de perfil */
+            border-radius: 50%; /* Hace la foto redonda */
+            object-fit: cover; /* Cubre el área del contenedor */
+            margin-bottom: 20px; /* Espaciado inferior */
+        }
+
+        /* Estilos para las secciones */
+        section {
+            padding: 50px 20px; /* Espaciado superior e inferior, y lateral */
+            margin: 20px 0; /* Margen superior e inferior */
+            background-color: #fff; /* Fondo blanco */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        h2 {
+            text-align: center; /* Centra los títulos de las secciones */
+            margin-bottom: 30px; /* Espaciado inferior */
+            color: #333; /* Color del texto */
+        }
+
+        p {
+            line-height: 1.6; /* Altura de línea para mejor legibilidad */
+            color: #666; /* Color del texto */
+        }
+
+        ul {
+            padding-left: 20px; /* Indentación para las listas */
+            color: #666; /* Color del texto */
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            text-align: center; /* Centra el texto */
+            padding: 20px 0; /* Espaciado superior e inferior */
+            background-color: #333; /* Fondo oscuro */
+            color: white; /* Texto blanco */
+            position: relative; /* Posición relativa */
+            bottom: 0; /* Asegura que esté en la parte inferior */
+            width: 100%; /* Ancho completo */
+        }
+
+        /* Estilos para el botón de cambio de idioma */
+        .language-button {
+            position: fixed; /* Cambia a fixed para que esté siempre visible */
+            top: 10px;
+            right: 20px;
+            width: 60px; /* Tamaño del botón */
+            height: 60px; /* Tamaño del botón */
+            border-radius: 50%; /* Hace el botón circular */
+            background-color: white; /* Fondo blanco */
+            border: 2px solid #ccc; /* Borde gris claro */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+            z-index: 1100; /* Asegura que esté por delante de otros elementos */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .language-button img {
+            width: 35px; /* Tamaño de la bandera */
+            height: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .language-button:hover {
+            transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón al pasar el mouse */
+            background-color: #f0f0f0; /* Cambia el fondo al pasar el mouse */
+        }
+
+        .language-button:hover img {
+            transform: scale(1.2); /* Aumenta ligeramente el tamaño de la bandera al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#welcome">Inicio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <button id="language-toggle" class="language-button">
+            <img id="language-flag" src="assets/images/usa-flag.png" alt="Idioma" />
+        </button>
+    </header>
+    <section id="welcome" class="welcome">
+        <img src="assets/images/foto perfil.jfif" alt="Federico Garcia Schiro" class="profile-photo">
+        <h1>Bienvenidos a mi portfolio</h1>
+        <h2>Federico Garcia Schiro</h2>
+    </section>
+    
+    <main>
+        <section id="about" class="about">
+            <h2>Sobre Mi</h2>
+            <p>Hola yo soy Federico, soy estudiante de segundo año de la carrera Desarrollo de Software en el Instituto Tecnologico "El Molino", donde cada dia me nutro de nuevo conocimiento para lo que va a ser mi vida como programador, me apasiona la programación, me quiero dedicar a la parte de frontend y tengo muchas ganas de seguir aprendiendo cosas nuevas.</p>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Proyectos</h2>
+            <p>Estos son algunos proyectos en los que fui trabajando a lo largo de mi vida estudiantil:</p>
+            <div class="projects-gallery">
+                <figure class="project-card">
+                    <img src="assets/images/Captura de pantalla 2025-12-04 a la(s) 09.58.26.png" alt="Captura proyecto 1">
+                </figure>
+                <figure class="project-card">
+                    <img src="assets/images/Captura de pantalla 2025-12-04 a la(s) 09.58.43.png" alt="Captura proyecto 2">
+                </figure>
+                <figure class="project-card">
+                    <img src="assets/images/Captura de pantalla 2025-12-04 a la(s) 09.58.58.png" alt="Captura proyecto 3">
+                </figure>
+                <figure class="project-card">
+                    <img src="assets/images/Captura de pantalla 2025-12-04 a la(s) 09.59.14.png" alt="Captura proyecto 4">
+                </figure>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <p>Mis skill incluyen:</p>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contacto</h2>
+            <p>Pueden contactarse conmigo a través de:</p>
+            <div class="contact-buttons">
+                <a href="https://github.com/fede12345678" class="contact-button">
+                    <img src="assets/images/github-icon.png" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/federico-garcia-schiro-b42258275/" class="contact-button">
+                    <img src="assets/images/linkedin-icon.png" alt="LinkedIn">
+                </a>
+                <a href="mailto:F.garciaschiro@gmail.com" class="contact-button">
+                    <img src="assets/images/gmail-icon.png" alt="Gmail">
+                </a>
+                <a href="https://wa.me/543496443388" class="contact-button whatsapp-button">
+                    <img src="assets/images/whatsapp-icon.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.instagram.com/fede_garcia.7" class="contact-button">
+                    <img src="assets/images/instagram-icon.png" alt="Instagram">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Federico Garcia Schiro. All rights reserved.</p>
+    </footer>
+
+    <!-- Lightbox para ampliar capturas -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+        <div class="lightbox-content" role="dialog" aria-modal="true">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">&times;</button>
+    </div>
+
+    <script>
+    const translations = {
+        en: {
+            welcome: "Welcome to my portfolio",
+            about: "About Me",
+            aboutText: "Hi, I'm Federico, a Software Development student at the 'El Molino' Technological Institute, starting my final year. I'm passionate about programming and hope to specialize in frontend development. At the moment I'm working on two WordPress projects: an online store and a restaurant website with reservation functionality. I'm looking for my first challenge as a programmer and eager to enter the workforce.",
+            projects: "Projects",
+            projectsText: "These are the main views of my restaurant project made in Figma:",
+            skills: "Skills",
+            contact: "Contact",
+            contactText: "You can reach me through:",
+        },
+        es: {
+            welcome: "Bienvenidos a mi portfolio",
+            about: "Sobre Mí",
+            aboutText: "Hola, soy Federico, estudiante de la carrera de Desarrollo de Software en el Instituto Tecnológico 'El Molino', empezando mi ultimo año de cursado. Me apasiona la programación y aspiro a especializarme en desarrollo frontend. En este momento estoy trabajando en dos proyectos con WordPress una tienda online y un sitio web para un restaurante con reservas. Estoy buscando mi primer desafío como programador y adentrarme en el mundo laboral.",
+            projects: "Proyectos",
+            projectsText: "Estas son las vistas principales de mi proyecto de restaurante hechas en Figma:",
+            skills: "Habilidades",
+            contact: "Contacto",
+            contactText: "Puedes contactarme a través de:",
+        },
+    };
+
+    const toggleButton = document.getElementById("language-toggle");
+    const languageFlag = document.getElementById("language-flag");
+    let currentLanguage = "es"; // Idioma inicial
+
+    toggleButton.addEventListener("click", () => {
+        currentLanguage = currentLanguage === "es" ? "en" : "es";
+        languageFlag.src = currentLanguage === "es" ? "assets/images/usa-flag.png" : "assets/images/spain-flag.png";
+
+        document.getElementById("welcome").querySelector("h1").textContent = translations[currentLanguage].welcome;
+        document.getElementById("about").querySelector("h2").textContent = translations[currentLanguage].about;
+        document.getElementById("about").querySelector("p").textContent = translations[currentLanguage].aboutText;
+        document.getElementById("projects").querySelector("h2").textContent = translations[currentLanguage].projects;
+        document.getElementById("projects").querySelector("p").textContent = translations[currentLanguage].projectsText;
+        document.getElementById("skills").querySelector("h2").textContent = translations[currentLanguage].skills;
+        document.getElementById("contact").querySelector("h2").textContent = translations[currentLanguage].contact;
+        document.getElementById("contact").querySelector("p").textContent = translations[currentLanguage].contactText;
+    });
+</script>
+    <script>
+    // Lightbox simple para las capturas
+    (function(){
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('lightbox-close');
+
+        function openLightbox(src, alt){
+            lightboxImg.src = src;
+            lightboxImg.alt = alt || '';
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden','false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(){
+            lightbox.classList.remove('open');
+            lightbox.setAttribute('aria-hidden','true');
+            lightboxImg.src = '';
+            document.body.style.overflow = '';
+        }
+
+        // Abrir al click en las imágenes de proyecto
+        document.querySelectorAll('.projects-gallery .project-card img').forEach(img => {
+            img.addEventListener('click', (e) => {
+                openLightbox(e.currentTarget.src, e.currentTarget.alt);
+            });
+        });
+
+        // cerrar con clic fuera de la imagen (sobre el overlay)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === closeBtn) closeLightbox();
+        });
+
+        // cerrar con ESC
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    })();
+    </script>
+</body>
+</html>

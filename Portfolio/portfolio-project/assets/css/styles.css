@@ -1,0 +1,348 @@
+body {
+    background-color: black;
+    color: violet;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid violet;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: rgb(238, 130, 238);
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+p {
+    font-size: 18px;
+}
+
+button {
+    background-color: violet;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: darkviolet;
+}
+
+/* Estilo del menú de navegación */
+.navbar {
+    background-color: black; /* Fondo negro */
+    padding: 10px 0;
+    position: sticky; /* Fija el menú en la parte superior */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+}
+
+.navbar ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex;
+    justify-content: center; /* Centra los elementos del menú */
+    gap: 20px; /* Espaciado entre los botones */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: violet; /* Color del texto */
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: violet; /* Fondo violeta al pasar el mouse */
+    color: black; /* Texto negro al pasar el mouse */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Imagen de perfil redonda y con proporciones correctas */
+.profile-photo {
+    width: 150px; /* Ajusta el tamaño según lo que necesites */
+    height: 150px; /* Mantén el mismo valor que el ancho para que sea un círculo */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    display: block;
+    margin: 0 auto 20px; /* Centra la imagen y agrega un margen inferior */
+}
+
+/* Contenedor de los botones de contacto */
+.contact-buttons {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente */
+    gap: 100px; /* Aumenta significativamente el espaciado entre los íconos */
+    margin-top: 10px;
+}
+
+/* Botones de contacto (solo íconos) */
+.contact-button {
+    display: inline-block;
+    width: 50px; /* Tamaño del botón */
+    height: 50px;
+    border-radius: 50%; /* Hace que los botones sean redondos */
+    background-color: #ffffff; /* Fondo blanco solicitado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button img {
+    width: 28px; /* Tamaño del ícono (ajustado para que entre bien en el botón) */
+    height: 28px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transición para el movimiento y el efecto */
+}
+
+.contact-button:hover {
+    background-color: #ffffff; /* Hover claro sobre fondo blanco */
+}
+
+/* Efecto al pasar el mouse */
+.contact-button img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del ícono */
+    filter: brightness(1.2); /* Hace el ícono más brillante */
+}
+
+/* Estilo específico para el botón de WhatsApp */
+.whatsapp-button {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 50%; /* Hacer el botón redondo */
+    padding: 0; /* Espaciado interno reducido para ajustar el icono */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.12); /* Sombra ligera */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; /* Tamaño del botón (coincide con .contact-button) */
+    height: 50px; /* Tamaño del botón (coincide con .contact-button) */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transición suave */
+}
+
+/* Ícono dentro del botón de WhatsApp */
+.whatsapp-button img {
+    width: 28px; /* Tamaño del ícono (ajustado para coincidir con otros botones) */
+    height: 28px;
+}
+
+/* Efecto al pasar el mouse sobre el botón de WhatsApp */
+.whatsapp-button:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del botón */
+    filter: brightness(1.2); /* Hace el ícono más brillante */
+}
+
+/* Contenedor de habilidades */
+.skills ul {
+    display: flex; /* Usa flexbox para alinear los elementos en fila */
+    justify-content: center; /* Centra las habilidades horizontalmente */
+    gap: 80px; /* Aumenta el espaciado entre las habilidades */
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding predeterminado */
+    margin: 0; /* Elimina el margen predeterminado */
+}
+
+/* Galería de proyectos (capturas) */
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-card figcaption {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+    text-align: center;
+    background: transparent;
+}
+
+/* Lightbox / modal para ampliar capturas */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    max-width: 1100px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 6px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+}
+
+/* Asegurar que .project-card no capture el cursor cuando esté dentro del grid */
+.project-card img { cursor: zoom-in; }
+
+/* Elementos de la lista de habilidades */
+.skills li {
+    position: relative;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 20px;
+    border: 2px solid violet;
+    border-radius: 8px;
+    background-color: black;
+    color: violet;
+    margin: 0 10px;
+    overflow: hidden;
+    transition: color 0.3s;
+    z-index: 1;
+}
+
+.skills li:hover {
+    transform: scale(1.15);
+    z-index: 2;
+    transition: transform 0.3s cubic-bezier(.4,2,.6,1), color 0.3s;
+}
+
+.skills li::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    z-index: -1;
+    border-radius: 12px;
+    background: conic-gradient(
+        from 0deg,
+        #ff0000,
+        #ff9900,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #9900ff,
+        #ff00ff,
+        #ff0000
+    );
+    filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.3s;
+    animation: none;
+}
+
+.skills li:hover::before {
+    opacity: 1;
+    animation: rgb-border 2s linear infinite;
+}
+
+@keyframes rgb-border {
+    0% {
+        background-position: 0% 50%;
+        filter: blur(8px);
+    }
+    100% {
+        background-position: 100% 50%;
+        filter: blur(8px);
+    }
+}
+
+/* Botón de cambio de idioma */
+.language-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: violet;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.language-button:hover {
+    background-color: none; /* Cambia el fondo al pasar el mouse */
+    color: none; /* Cambia el color del texto al pasar el mouse */
+    border: 2px solid violet; /* Agrega un borde violeta */
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.5); /* Agrega una sombra */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+}
